@@ -1,0 +1,39 @@
+ INFO 10-12 17:18:51(AbstractApplicationContext.java:510): Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1ed3c8d: startup date [Sat Oct 12 17:18:50 CST 2019]; root of context hierarchy
+ INFO 10-12 17:18:54(XmlBeanDefinitionReader.java:317): Loading XML bean definitions from class path resource [spring.xml]
+ INFO 10-12 17:19:43(XmlBeanDefinitionReader.java:317): Loading XML bean definitions from class path resource [spring-consumer.xml]
+ INFO 10-12 17:19:44(?:?): using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ WARN 10-12 17:19:57(FactoryBeanRegistrySupport.java:71): FactoryBean threw exception from getObjectType, despite the contract saying that it should return null if the type of its object cannot be determined yet
+java.lang.IllegalStateException: com.chanshuyi.service.IUserService
+	at com.alibaba.dubbo.config.ReferenceConfig.getInterfaceClass(ReferenceConfig.java:450)
+	at com.alibaba.dubbo.config.spring.ReferenceBean.getObjectType(ReferenceBean.java:69)
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.getTypeForFactoryBean(FactoryBeanRegistrySupport.java:66)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isTypeMatch(AbstractBeanFactory.java:491)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:436)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:404)
+	at org.springframework.context.support.DefaultLifecycleProcessor.getLifecycleBeans(DefaultLifecycleProcessor.java:273)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:131)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:770)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:483)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83)
+	at com.hyz.UserServiceConsumer.main(UserServiceConsumer.java:14)
+Caused by: java.lang.ClassNotFoundException: com.chanshuyi.service.IUserService
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at com.alibaba.dubbo.config.ReferenceConfig.getInterfaceClass(ReferenceConfig.java:446)
+	... 13 more
+ INFO 10-12 17:19:57(AbstractConfig.java:450):  [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 127.0.0.1
+ INFO 10-12 17:19:57(AbstractRegistryFactory.java:63):  [DUBBO] Close all registries [], dubbo version: 2.5.3, current host: 127.0.0.1
+ INFO 10-12 17:38:42(Launcher.java:23): 开始初始化core服务
+ INFO 10-12 17:38:42(AbstractApplicationContext.java:510): Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@aa6d82: startup date [Sat Oct 12 17:38:42 CST 2019]; root of context hierarchy
+ INFO 10-12 17:38:42(XmlBeanDefinitionReader.java:317): Loading XML bean definitions from class path resource [spring.xml]
+ INFO 10-12 17:38:45(XmlBeanDefinitionReader.java:317): Loading XML bean definitions from class path resource [spring-provider.xml]
+ INFO 10-12 17:38:45(?:?): using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+ INFO 10-12 17:38:50(ServiceBean.java:107):  [DUBBO] The service ready on spring started. service: com.chanshuyi.service.IUserService, dubbo version: 2.5.3, current host: 127.0.0.1
+ INFO 10-12 17:38:50(AbstractConfig.java:450):  [DUBBO] Run shutdown hook now., dubbo version: 2.5.3, current host: 127.0.0.1
+ INFO 10-12 17:38:50(AbstractRegistryFactory.java:63):  [DUBBO] Close all registries [], dubbo version: 2.5.3, current host: 127.0.0.1
